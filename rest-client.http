@@ -15,7 +15,7 @@ Content-Type: application/json
 "artists": [1],
 "releasedDate": "2022-09-29",
 "duration": "02:34",
-"lyrics": "fedy"
+"lyrics": "fedy",
 }
 
 
@@ -24,3 +24,28 @@ PUT http://localhost:3000/songs/1
 
 ### Update SONGS REQUEST
 DELETE http://localhost:3000/songs/1
+
+### Signup User
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+"firstName": "john",
+"lastName": "doe",
+"email": "john2@gmail.com",
+"password": "123456"
+}
+
+
+### Login User
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+"email": "john@gmail.com",
+"password": "123456"
+}
+
+###Profile
+GET http://localhost:3000/profile
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE3NDcwNDM3MDksImV4cCI6MTc0NzEzMDEwOX0.MJLp14EcUAn5OYZGJBbGU3ffLBv3EAlkfm9rzXEjO7Y

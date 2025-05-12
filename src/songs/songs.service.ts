@@ -1,4 +1,4 @@
-import { ConsoleLogger, Injectable } from '@nestjs/common';
+import { Injectable } from '@nestjs/common';
 import { DeleteResult, Repository, UpdateResult } from 'typeorm';
 import {
   paginate,
@@ -23,7 +23,9 @@ export class SongsService {
 
   async create(songDTO: CreateSongDTO): Promise<Song> {
     const song = new Song();
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     song.title = songDTO.title;
+    // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     song.artists = songDTO.artists;
     song.duration = songDTO.duration;
     song.lyrics = songDTO.lyrics;
@@ -61,8 +63,6 @@ export class SongsService {
   async paginate(options: IPaginationOptions): Promise<Pagination<Song>> {
     const queryBuilder = this.songsRepository.createQueryBuilder('c');
     queryBuilder.orderBy('c.releasedDate', 'DESC');
-
-    // eslint-disable-next-line @typescript-eslint/no-unsafe-call
     return await paginate<Song>(queryBuilder, options);
   }
 }

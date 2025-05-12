@@ -13,6 +13,8 @@ import { PlayListModule } from './playlists/playlists.module';
 import { DataSource } from 'typeorm';
 import { DevConfigService } from './common/providers/DevConfigService';
 // import { DataSource } from 'typeorm';
+import { AuthModule } from './auth/auth.module';
+import { UsersModule } from './users/users.module';
 
 @Module({
   imports: [
@@ -28,6 +30,8 @@ import { DevConfigService } from './common/providers/DevConfigService';
     }),
     SongsModule,
     PlayListModule,
+    AuthModule,
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService, DevConfigService],
