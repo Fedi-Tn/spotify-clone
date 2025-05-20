@@ -9,13 +9,14 @@ GET http://localhost:3000/songs/1
 ### Create New SONGS REQUEST
 POST http://localhost:3000/songs
 Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlZHlAZ21haWwuY29tIiwidXNlcklkIjo3LCJhcnRpc3RJZCI6MSwiaWF0IjoxNzQ3MDU1OTA1LCJleHAiOjE3NDcxNDIzMDV9.Cupwzj4aT24QNKbNbAH07H4mUDilu5mAXZO7TZ3Wqy0
 
 {
-"title": "lasting lover",
-"artists": [1],
+"title": "Ouuuu",
+"artists": [0],
 "releasedDate": "2022-09-29",
 "duration": "02:34",
-"lyrics": "fedy",
+"lyrics": "Ouuuu nsitou li nseni"
 }
 
 
@@ -48,4 +49,24 @@ Content-Type: application/json
 
 ###Profile
 GET http://localhost:3000/profile
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImpvaG5AZ21haWwuY29tIiwic3ViIjoxLCJpYXQiOjE3NDcwNDM3MDksImV4cCI6MTc0NzEzMDEwOX0.MJLp14EcUAn5OYZGJBbGU3ffLBv3EAlkfm9rzXEjO7Y
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6ImZlZHlAZ21haWwuY29tIiwidXNlcklkIjo3LCJhcnRpc3RJZCI6MSwiaWF0IjoxNzQ3MDU1OTA1LCJleHAiOjE3NDcxNDIzMDV9.Cupwzj4aT24QNKbNbAH07H4mUDilu5mAXZO7TZ3Wqy0
+
+### Artist Login User
+POST http://localhost:3000/auth/login
+Content-Type: application/json
+
+{
+"email": "fedy@gmail.com",
+"password": "123456"
+}
+
+### Sign Up Artist
+POST http://localhost:3000/auth/signup
+Content-Type: application/json
+
+{
+"firstName": "Fedy",
+"lastName": "Nouri",
+"email": "fedy@gmail.com",
+"password": "123456"
+}
